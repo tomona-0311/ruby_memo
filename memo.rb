@@ -26,7 +26,7 @@ end
            puts "メモの内容を記入してください"
           puts  "Ctrl + D を推奨します"
            memo = STDIN.read
-          CSV.open("#{test}.csv",mode = "a") do |csv|
+          CSV.open("#{file_name}.csv",mode = "a") do |csv|
     csv.puts ["#{memo}"]
      
   end
