@@ -20,14 +20,14 @@ end
 
       elsif memo_type == 2
           puts "拡張子を除いたファイルを入力してくでさい"
-          file_neme = gets.chomp
+          file_name = gets.chomp
        
          
            puts "メモの内容を記入してください"
           puts  "Ctrl + D を推奨します"
            memo = STDIN.read
           CSV.open("#{file_name}.csv","a") do |csv|
-    csv<< ["#{memo}"]
+    #これも反映させられる。　csv<< ["#{memo}"]
      csv.puts ["#{memo}"]#csvに反映させる
     
   end
