@@ -14,20 +14,23 @@
      Ctrl+Dで保存します。"
      memo = STDIN.read
     
-      
       CSV.open("#{file_name}.csv","w") do |csv|
      csv.puts ["#{memo}"]
 end    
 
       elsif memo_type == 2
           puts "拡張子を除いたファイルを入力してくでさい"
-       
           file_neme = gets.chomp
+       
+         
            puts "メモの内容を記入してください"
           puts  "Ctrl + D を推奨します"
            memo = STDIN.read
-          CSV.open("#{file_name}.csv",mode = "a") do |csv|
-    csv.puts ["#{memo}"]
-     
+          CSV.open("#{file_name}.csv","a") do |csv|
+    csv<< ["#{memo}"]
+     csv.puts ["#{memo}"]#csvに反映させる
+    
   end
+  else
+     puts "エラー"
  end
